@@ -52,6 +52,11 @@ public class StartScreen extends JFrame implements ActionListener {
 			// Proceed with loading the new game
 			System.out.println("Username submitted: " + username);
 			// Load new game logic here
+			ChessBoard board = new ChessBoard(username);
+            board.load();
+
+            // Enable game logic
+            GameLogic logic = new GameLogic(board.getTiles(), board.getKnightPosition(), board.getGiveUpButton());
 		} else {
 			// Display an error message
 			JOptionPane.showMessageDialog(this,
