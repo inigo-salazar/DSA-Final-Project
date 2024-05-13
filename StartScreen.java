@@ -63,5 +63,9 @@ public class StartScreen extends JFrame implements ActionListener {
 		// Check if the username meets the specified requirements
 		return username.matches("^(?=.*[a-zA-Z]{5,})(?=.*\\d).*$");
 	}
+
+	public String getUsername(){
+		return username;
+	}
 	
 }
