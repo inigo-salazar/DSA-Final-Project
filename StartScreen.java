@@ -43,7 +43,7 @@ public class StartScreen extends JFrame implements ActionListener {
 		// Set the JFrame to be visible
 		setVisible(true);
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// Handle the submit button action
@@ -63,9 +63,5 @@ public class StartScreen extends JFrame implements ActionListener {
 		// Check if the username meets the specified requirements
 		return username.matches("^[a-zA-Z0-9]{5,}$");
 	}
-	
-	public static void main(String[] args) {
-		// Create a new instance of the StartScreen
-		new StartScreen();
-	}
+
 }
