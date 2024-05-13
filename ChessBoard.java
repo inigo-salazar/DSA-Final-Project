@@ -5,8 +5,11 @@ import java.util.Random;
 
 public class ChessBoard extends JFrame{
 	private JButton[][] tiles;
+	private JButton giveUp;
 	private JPanel gameBoard = new JPanel(new GridLayout(4, 8));
 	private JLabel gameLabel = new JLabel("Knight's Chess", JLabel.CENTER);
+	
+	private JPanel southPanel = new JPanel();
 	
 	private int[] knightPos = new int[2]; //Coordinate position of knight: Key = row num, Value = col num
 	
@@ -28,10 +31,14 @@ public class ChessBoard extends JFrame{
 		//Game label (North)
 		gameLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
 		
-		/* TEMPORARILY DISABLED FOR TESTING
-		//Game Letter Coordinate (South)
-		gameLetterCoordinate = new JLabel("A\nB\nC\nD\nE\nF\nG\nH", JLabel.CENTER);
 		
+		//Game Letter Coordinate (South) + Give up button
+		giveUp = new JButton();
+		giveUp.setText("Give Up");
+		giveUp.setSize(30,30);
+		//gameLetterCoordinate = new JLabel("A\nB\nC\nD\nE\nF\nG\nH", JLabel.CENTER);
+		
+		/* TEMPORARILY DISABLED FOR TESTING
 		//Game Number Coordinate (EAST)
 		gameNumberCoordinate = new JLabel("1\t2\t3\t4", JLabel.CENTER);
 		*/
@@ -39,6 +46,7 @@ public class ChessBoard extends JFrame{
 		//Borderlayout 
 		add(gameBoard, BorderLayout.CENTER); //Game board (Tiles)
 		add(gameLabel, BorderLayout.NORTH); //Game label
+		add(giveUp, BorderLayout.SOUTH);
 		
 		/* TEMPORARILY DISABLED FOR TESTING
 		add(gameLetterCoordinate, BorderLayout.SOUTH); //Letter coordinate
@@ -88,5 +96,8 @@ public class ChessBoard extends JFrame{
 	}
 	public JButton[][] getTiles() {
 		return tiles;
+	}
+	public JButton getGiveUpButton() {
+		return giveUp;
 	}
 }
