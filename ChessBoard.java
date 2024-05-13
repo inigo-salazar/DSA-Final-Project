@@ -4,6 +4,7 @@ import java.awt.event.*;
 import java.util.Random;
 
 public class ChessBoard extends JFrame{
+	private String username;
 	private JButton[][] tiles;
 	private JButton giveUp;
 	private JPanel gameBoard = new JPanel(new GridLayout(4, 8));
@@ -19,11 +20,13 @@ public class ChessBoard extends JFrame{
 	private JLabel gameWest = new JLabel("", JLabel.CENTER);
 	*/
 	
-	ChessBoard(){
+	ChessBoard(String username){
 		setTitle("Knight's Chess"); //Window title
 		setSize(500, 500); //Window size
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout()); 
+
+		this.username = username;
 		
 		//4x8 grid (Center)
 		tiles = new JButton[4][8];
